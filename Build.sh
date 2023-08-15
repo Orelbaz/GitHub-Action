@@ -14,4 +14,4 @@ helm package .
 gsutil cp ${MY_PATH}Kubernetes-pipeline/Helm-chart/stock-site-${BUILD_NUMBER}.0.tgz gs://stock-site
 
 
-blalala
+bla lala
