@@ -39,13 +39,4 @@ jobs:
       - name: Copy Helm chart to GCS bucket
         run: gsutil cp ./stock-site-0.1.0.tgz gs://stock-action
 
-  test:
-    runs-on: ubuntu-latest 
-    needs: build
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name:
 
