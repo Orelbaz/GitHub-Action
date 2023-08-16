@@ -37,7 +37,7 @@ jobs:
           project_id: gke-first-393008
 
       - name: Copy Helm chart to GCS bucket
-        run: gsutil cp ./stock-site-0.1.0.tgz gs://stock-site
+        run: gsutil cp ./stock-site-0.1.0.tgz gs://stock-action
 
   test:
     runs-on: ubuntu-latest 
