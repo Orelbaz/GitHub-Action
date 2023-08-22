@@ -66,6 +66,9 @@ jobs:
         run: |
           helm upgrade --install stock-site-test stock-site-0.1.0.tgz
 
+      - name: Test the deployed app
+        run: ./Test.sh
+
   prod:
     needs: test
     runs-on: ubuntu-latest
