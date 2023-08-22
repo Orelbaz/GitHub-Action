@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: flask
-          image: orelbaz/action:{{ .Values.TAG }}
+          image: orelbaz/action:1.0
           ports:
             - containerPort: 5000
 ---
