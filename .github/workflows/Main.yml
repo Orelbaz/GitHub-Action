@@ -52,4 +52,4 @@ jobs:
 
       - name: Deploy Helm chart to test GKE cluster
         run: |
-          helm upgrade --install stock-site-test gs://stock-action/stock-site-0.1.0.tgz
+          helm install --install stock-site-test gs://stock-action/stock-site-0.1.0.tgz
