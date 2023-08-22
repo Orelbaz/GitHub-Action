@@ -49,7 +49,15 @@ jobs:
         with:
           service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
           project_id: gke-first-393008
+      
+      - name: Get GKE plugin
+        run: |
+          gcloud components install gke-gcloud-auth-plugin
 
+      - name: Configure kubectl
+        run: |
+          gcloud container clusters get-credentials eks-test --region us-central1-c
+      
       - name: Download Helm chart from GCS
         run: |
           gsutil cp gs://stock-action/stock-site-0.1.0.tgz stock-site-0.1.0.tgz
