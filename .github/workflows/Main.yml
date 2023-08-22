@@ -39,4 +39,17 @@ jobs:
       - name: Copy Helm chart to GCS bucket
         run: gsutil cp ./stock-site-0.1.0.tgz gs://stock-action
 
+  test:
+    needs: build
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.2.1
+        with:
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          project_id: gke-first-393008
+
+      - name: Deploy Helm chart to test GKE cluster
+        run: |
+          helm upgrade --install stock-site-test gs://stock-action/stock-site-0.1.0.tgz
